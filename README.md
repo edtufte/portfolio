@@ -1,6 +1,8 @@
 # Eric Tufte Portfolio
 
-A modern, responsive portfolio website for Eric Tufte, built with the latest web technologies.
+A modern, responsive portfolio website by me, Eric Tufte, built with the latest web technologies.
+Visit my portfolio at [EricTufte.com](https://erictufte.com)
+
 
 ## 🚀 Tech Stack
 
