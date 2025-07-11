@@ -1,6 +1,10 @@
 import React from 'react';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Skills: React.FC = () => {
+  const { ref: skillsRef, isVisible: skillsVisible } = useIntersectionObserver({ threshold: 0.2 });
+  const { ref: competenciesRef, isVisible: competenciesVisible } = useIntersectionObserver({ threshold: 0.2 });
+
   const skillCategories = [
     {
       category: "Programming & Data",
@@ -88,11 +92,11 @@ const Skills: React.FC = () => {
         <h2 className="section-title">Skills & Expertise</h2>
         <p className="section-subtitle">Technical and business skills developed through years of hands-on experience</p>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div ref={skillsRef} className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 ${skillsVisible ? 'visible' : 'fade-in-up'}`}>
           {skillCategories.map((category, index) => (
-            <div key={index} className="card">
+            <div key={index} className={`card ${skillsVisible ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="flex items-center gap-3 mb-4">
-                <div className="text-blue-600">{category.icon}</div>
+                <div className="text-indigo-600">{category.icon}</div>
                 <h3 className="text-lg font-semibold text-gray-800">
                   {category.category}
                 </h3>
@@ -108,16 +112,16 @@ const Skills: React.FC = () => {
           ))}
         </div>
         
-        <div className="card">
-          <h3 className="text-xl font-semibold mb-6 text-gray-800 text-center">Key Competencies</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+        <div ref={competenciesRef} className={`card ${competenciesVisible ? 'visible' : 'scale-in'}`}>
+          <h3 className="text-xl font-semibold mb-8 text-gray-800 text-center">Key Competencies</h3>
+          <div className="grid md:grid-cols-3 gap-8">
             {competencies.map((competency, index) => (
-              <div key={index} className="text-center">
-                <div className={`w-14 h-14 ${competency.colorClass} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+              <div key={index} className={`text-center ${competenciesVisible ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: `${index * 0.2 + 0.3}s` }}>
+                <div className={`w-16 h-16 ${competency.colorClass} rounded-xl flex items-center justify-center mx-auto mb-4 transition-transform hover:scale-110`}>
                   {competency.icon}
                 </div>
-                <h4 className="font-semibold text-gray-800 mb-2 text-base">{competency.title}</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h4 className="font-semibold text-gray-800 mb-3 text-lg">{competency.title}</h4>
+                <p className="text-gray-600 text-base leading-relaxed">
                   {competency.description}
                 </p>
               </div>

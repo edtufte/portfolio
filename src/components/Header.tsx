@@ -29,9 +29,9 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="text-xl font-bold">
             {isScrolled ? (
-              <span className="text-gradient">Eric Tufte</span>
+              <span className="text-gradient name-dark">Eric Tufte</span>
             ) : (
-              <span className="text-white drop-shadow-lg">Eric Tufte</span>
+              <span className="text-slate-800 name-dark">Eric Tufte</span>
             )}
           </div>
           
@@ -39,25 +39,25 @@ const Header: React.FC = () => {
           <nav className="hidden md:flex space-x-4">
             <button
               onClick={() => scrollToSection('about')}
-              className={`nav-button ${isScrolled ? 'nav-button-light' : 'nav-button-dark'}`}
+              className={`nav-button ${isScrolled ? 'nav-button-light' : 'nav-button-light'}`}
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('experience')}
-              className={`nav-button ${isScrolled ? 'nav-button-light' : 'nav-button-dark'}`}
+              className={`nav-button ${isScrolled ? 'nav-button-light' : 'nav-button-light'}`}
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className={`nav-button ${isScrolled ? 'nav-button-light' : 'nav-button-dark'}`}
+              className={`nav-button ${isScrolled ? 'nav-button-light' : 'nav-button-light'}`}
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className={`nav-button ${isScrolled ? 'nav-button-light' : 'nav-button-dark'}`}
+              className={`nav-button ${isScrolled ? 'nav-button-light' : 'nav-button-light'}`}
             >
               Contact
             </button>
