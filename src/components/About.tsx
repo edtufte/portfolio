@@ -19,7 +19,7 @@ const About: React.FC = () => {
             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
               Data Scientist with 7+ years leading large-scale supply chain optimization programs. 
               Proven track record managing cross-functional engineering teams, delivering multi-million 
-              dollar initiatives, and driving technical solutions across Amazon's fulfillment network 
+              dollar growth initiatives, and driving technical solutions across Amazon's fulfillment network 
               and Walmart's supply chain operations.
             </p>
             
